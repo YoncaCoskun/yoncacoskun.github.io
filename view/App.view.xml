@@ -1,10 +1,9 @@
 <mvc:View controllerName="ems.UI5Showcase.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true" xmlns="sap.m">
-	<App id="idAppControl">
-		<pages>
-			<Page title="{i18n>title}">
-				<content></content>
-			</Page>
-		</pages>
-	</App>
+	displayBlock="true" xmlns="sap.m" xmlns:layout="sap.ui.layout">
+	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
+		press="press">
+		<TileContent unit="EUR" footer="Current Quarter">
+			<ImageContent src="sap-icon://home-share"/>
+		</TileContent>
+	</GenericTile>
 </mvc:View>
