@@ -1,29 +1,38 @@
 <mvc:View controllerName="ems.UI5Showcase.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout">
-	<l:HorizontalLayout class="sapUiSmallMargin">
-		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-			press="press">
-			<TileContent unit="EUR" footer="Current Quarter">
-				<ImageContent src="sap-icon://home-share"/>
-			</TileContent>
-		</GenericTile>
-		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-			press="press">
-			<TileContent unit="EUR" footer="Current Quarter">
-				<ImageContent src="sap-icon://home-share"/>
-			</TileContent>
-		</GenericTile>
-		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-			press="press">
-			<TileContent unit="EUR" footer="Current Quarter">
-				<ImageContent src="sap-icon://home-share"/>
-			</TileContent>
-		</GenericTile>
-		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-			press="press">
-			<TileContent unit="EUR" footer="Current Quarter">
-				<ImageContent src="sap-icon://home-share"/>
-			</TileContent>
-		</GenericTile>
-	</l:HorizontalLayout>
+	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:tnt="sap.tnt">
+	<tnt:ToolHeader>
+		<ToolbarSpacer/>
+		<Text text='Apps Showcase' textAlign="Center"/>
+		<ToolbarSpacer/>
+	</tnt:ToolHeader>
+	<l:VerticalLayout class="sapUiContentPadding">
+		<l:HorizontalLayout class="sapUiSmallMargin">
+			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
+				press="press">
+				<TileContent>
+					<ImageContent src="sap-icon://home-share"/>
+				</TileContent>
+			</GenericTile>
+			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
+				press="press">
+				<TileContent>
+					<ImageContent src="sap-icon://home-share"/>
+				</TileContent>
+			</GenericTile>
+		</l:HorizontalLayout>
+		<l:HorizontalLayout class="sapUiSmallMargin">
+			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
+				press="press">
+				<TileContent>
+					<ImageContent src="sap-icon://home-share"/>
+				</TileContent>
+			</GenericTile>
+			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
+				press="press">
+				<TileContent>
+					<ImageContent src="sap-icon://home-share"/>
+				</TileContent>
+			</GenericTile>
+		</l:HorizontalLayout>
+	</l:VerticalLayout>
 </mvc:View>

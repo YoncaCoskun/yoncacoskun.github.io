@@ -6,7 +6,7 @@ sap.ui.define([
 
 	return Controller.extend("ems.UI5Showcase.controller.App", {
 		press: function (evt) {
-			MessageToast.show("The GenericTile is pressed.");
+			MessageToast.show("Tile is pressed.");
 		}
 	});
 });
