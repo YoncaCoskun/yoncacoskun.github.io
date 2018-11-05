@@ -6,33 +6,63 @@
 		<ToolbarSpacer/>
 	</tnt:ToolHeader>
 	<l:VerticalLayout class="sapUiContentPadding">
-		<l:HorizontalLayout class="sapUiSmallMargin">
-			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-				press="press">
-				<TileContent>
-					<ImageContent src="sap-icon://home-share"/>
-				</TileContent>
-			</GenericTile>
-			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-				press="press">
-				<TileContent>
-					<ImageContent src="sap-icon://home-share"/>
-				</TileContent>
-			</GenericTile>
-		</l:HorizontalLayout>
-		<l:HorizontalLayout class="sapUiSmallMargin">
-			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-				press="press">
-				<TileContent>
-					<ImageContent src="sap-icon://home-share"/>
-				</TileContent>
-			</GenericTile>
-			<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-				press="press">
-				<TileContent>
-					<ImageContent src="sap-icon://home-share"/>
-				</TileContent>
-			</GenericTile>
-		</l:HorizontalLayout>
+		<Panel accessibleRole="Region">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Category"/>
+				</Toolbar>
+			</headerToolbar>
+			<content>
+				<l:HorizontalLayout class="sapUiSmallMargin sapUi">
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
+						press="press">
+						<TileContent>
+							<ImageContent src="sap-icon://home-share"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
+						press="press">
+						<TileContent>
+							<ImageContent src="sap-icon://home-share"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
+						press="press">
+						<TileContent>
+							<ImageContent src="sap-icon://home-share"/>
+						</TileContent>
+					</GenericTile>
+				</l:HorizontalLayout>
+			</content>
+		</Panel>
+		<Panel>
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Category"/>
+				</Toolbar>
+			</headerToolbar>
+			<content>
+				<l:HorizontalLayout class="sapUiSmallMargin">
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
+						press="press">
+						<TileContent>
+							<ImageContent src="sap-icon://home-share"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
+						press="press">
+						<TileContent>
+							<ImageContent src="sap-icon://home-share"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
+						press="press">
+						<TileContent>
+							<ImageContent src="sap-icon://home-share"/>
+						</TileContent>
+					</GenericTile>
+				</l:HorizontalLayout>
+			</content>
+		</Panel>
 	</l:VerticalLayout>
 </mvc:View>
