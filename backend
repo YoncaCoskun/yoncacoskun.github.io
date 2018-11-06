@@ -1,0 +1,7 @@
+##Vendor
+BAPI_VENDOR_GETDETAIL	Vendor	Details	LFA1	Vendor	GetDetail
+BAPI_VENDOR_FIND	Vendor	Vendor Matchcode	LFA1	Vendor	Find
+BAPI_VENDOR_DISPLAY	Vendor	Display Online	LFA1	Vendor	Display
+BAPI_VENDOR_CREATE	Vendor	Create Online	LFA1	Vendor	Create
+BAPI_VENDOR_EDIT	Vendor	Change Online	LFA1	Vendor	Edit
+BAPI_VENDOR_DELETE	Vendor	Set Deletion Indicator Online for Vendor	LFA1	Vendor	Delete
