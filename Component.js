@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"ems/UI5Showcase/model/models"
-], function (UIComponent, Device, models) {
+	"ems/UI5Showcase/model/models",
+	"sap/ui/model/json/JSONModel"
+], function (UIComponent, Device, models, JSONModel) {
 	"use strict";
 
 	return UIComponent.extend("ems.UI5Showcase.Component", {
@@ -17,6 +18,10 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function () {
+
+			var oModel = new JSONModel(sap.ui.require.toUrl("ems/UI5Showcase/model/") + "/feed.json");
+			this.setModel(oModel);
+
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 

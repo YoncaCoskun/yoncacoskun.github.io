@@ -1,68 +1,115 @@
 <mvc:View controllerName="ems.UI5Showcase.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:tnt="sap.tnt">
-	<tnt:ToolHeader>
-		<ToolbarSpacer/>
-		<Text text='Apps Showcase' textAlign="Center"/>
-		<ToolbarSpacer/>
-	</tnt:ToolHeader>
-	<l:VerticalLayout class="sapUiContentPadding">
-		<Panel accessibleRole="Region">
-			<headerToolbar>
-				<Toolbar height="3rem">
-					<Title text="Category"/>
-				</Toolbar>
-			</headerToolbar>
-			<content>
-				<l:HorizontalLayout class="sapUiSmallMargin sapUi">
-					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-						press="press">
-						<TileContent>
-							<ImageContent src="sap-icon://home-share"/>
-						</TileContent>
-					</GenericTile>
-					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-						press="press">
-						<TileContent>
-							<ImageContent src="sap-icon://home-share"/>
-						</TileContent>
-					</GenericTile>
-					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-						press="press">
-						<TileContent>
-							<ImageContent src="sap-icon://home-share"/>
-						</TileContent>
-					</GenericTile>
-				</l:HorizontalLayout>
-			</content>
-		</Panel>
-		<Panel>
-			<headerToolbar>
-				<Toolbar height="3rem">
-					<Title text="Category"/>
-				</Toolbar>
-			</headerToolbar>
-			<content>
-				<l:HorizontalLayout class="sapUiSmallMargin">
-					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-						press="press">
-						<TileContent>
-							<ImageContent src="sap-icon://home-share"/>
-						</TileContent>
-					</GenericTile>
-					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-						press="press">
-						<TileContent>
-							<ImageContent src="sap-icon://home-share"/>
-						</TileContent>
-					</GenericTile>
-					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Fulfillment Application Title" subheader="Subtitle"
-						press="press">
-						<TileContent>
-							<ImageContent src="sap-icon://home-share"/>
-						</TileContent>
-					</GenericTile>
-				</l:HorizontalLayout>
-			</content>
-		</Panel>
-	</l:VerticalLayout>
+	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<App>
+		<pages>
+			<Page title="{i18n>appTitle}" showNavButton="false" backgroundDesign="Transparent">
+				<Panel>
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<!-- Business Transactions -->
+							<Title text="{i18n>businessTransaction}"/>
+						</Toolbar>
+					</headerToolbar>
+					<content>
+						<l:HorizontalLayout class="sapUiSmallMargin">
+							<!-- Billing Documents -->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>billingDocuments}"
+								subheader="{i18n>browseBillingDocuments}" press="press">
+								<TileContent>
+									<ImageContent src="sap-icon://accounting-document-verification"/>
+								</TileContent>
+							</GenericTile>
+							<!-- G/L Accounts -->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>glAccount}" subheader="{i18n>glAccountDetails}"
+								press="press">
+								<TileContent>
+									<ImageContent src="sap-icon://expense-report"/>
+								</TileContent>
+							</GenericTile>
+							<!-- Debitor Account -->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>debitor}" subheader="{i18n>debitorBrowse}"
+								press="press">
+								<TileContent>
+									<ImageContent src="sap-icon://customer-financial-fact-sheet"/>
+								</TileContent>
+							</GenericTile>
+							<!-- Cost Centers -->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>costCenters}" subheader="{i18n>costCentersSub}"
+								press="press">
+								<TileContent>
+									<ImageContent src="sap-icon://capital-projects"/>
+								</TileContent>
+							</GenericTile>
+						</l:HorizontalLayout>
+					</content>
+				</Panel>
+				<Panel>
+					<headerToolbar>
+						<!-- Master Data -->
+						<Toolbar height="3rem">
+							<Title text="{i18n>masterDataApp}"/>
+						</Toolbar>
+					</headerToolbar>
+					<content>
+						<l:HorizontalLayout class="sapUiSmallMargin sapUi">
+							<!-- Vendors -->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>vendorCentral}" subheader="" press="press">
+								<TileContent>
+									<ImageContent src="sap-icon://activity-individual"/>
+								</TileContent>
+							</GenericTile>
+							<!-- Customers -->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>customerCentral}" subheader="" press="press">
+								<TileContent>
+									<ImageContent src="sap-icon://customer"/>
+								</TileContent>
+							</GenericTile>
+							<!-- Companies -->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>companyCentral}" subheader="" press="press">
+								<TileContent>
+									<ImageContent src="sap-icon://building"/>
+								</TileContent>
+							</GenericTile>
+							<!-- Business Partners -->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>businessPartnerCentral}" subheader="" press="press">
+								<TileContent>
+									<ImageContent src="sap-icon://business-card"/>
+								</TileContent>
+							</GenericTile>
+							<!-- Banks -->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>bankCentral}" subheader="" press="press">
+								<TileContent>
+									<ImageContent src="sap-icon://loan"/>
+								</TileContent>
+							</GenericTile>
+							<!-- Equipments -->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>equipments}" subheader="" press="press">
+								<TileContent>
+									<ImageContent src="sap-icon://add-equipment"/>
+								</TileContent>
+							</GenericTile>
+						</l:HorizontalLayout>
+					</content>
+				</Panel>
+				<Panel>
+					<headerToolbar>
+						<!-- HR Apps -->
+						<Toolbar height="3rem">
+							<Title text="{i18n>hrApps}"/>
+						</Toolbar>
+					</headerToolbar>
+					<content>
+						<l:HorizontalLayout class="sapUiSmallMargin sapUi">
+							<!-- HR Apps -->
+							<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>absenceManager}" subheader="" press="press">
+								<TileContent>
+									<ImageContent src="sap-icon://employee-rejections"/>
+								</TileContent>
+							</GenericTile>
+						</l:HorizontalLayout>
+					</content>
+				</Panel>
+			</Page>
+		</pages>
+	</App>
 </mvc:View>
