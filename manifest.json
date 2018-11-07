@@ -14,7 +14,6 @@
 			"version": "1.40.12"
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -33,14 +32,13 @@
 		"supportedThemes": [
 			"sap_hcb",
 			"sap_belize"
-
 		]
 	},
-
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "ems.UI5Showcase.view.App",
-			"type": "XML"
+			"type": "XML",
+			"id": "App"
 		},
 		"dependencies": {
 			"minUI5Version": "1.30.0",
@@ -74,20 +72,57 @@
 				"async": true,
 				"viewPath": "ems.UI5Showcase.view",
 				"controlAggregation": "pages",
-				"controlId": "idAppControl",
+				"controlId": "app",
 				"clearControlAggregation": false
 			},
 			"routes": [{
-				"name": "RouteApp",
-				"pattern": "RouteApp",
-				"target": ["TargetApp"]
+				"pattern": "",
+				"name": "indexTiles",
+				"target": [
+					"indexTiles"
+				]
+			}, {
+				"pattern": "vendors",
+				"name": "vendors",
+				"target": [
+					"vendors"
+				]
+			}, {
+				"pattern": "billingDocs",
+				"name": "billingDocs",
+				"target": [
+					"billingDocs"
+				]
 			}],
 			"targets": {
-				"TargetApp": {
+				"indexTiles": {
+					"viewName": "IndexTiles",
+					"viewId": "indexTiles",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
 					"viewType": "XML",
-					"transition": "slide",
-					"clearControlAggregation": false,
-					"viewName": "App"
+					"async": true,
+					"viewPath": "ems.UI5Showcase.view",
+					"controlAggregation": "pages",
+					"controlId": "app",
+					"clearControlAggregation": false
+				},
+				"vendors": {
+					"viewName": "Vendors",
+					"viewType": "XML",
+					"viewId": "vendors",
+					"viewLevel": 2,
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "ems.UI5Showcase.view",
+					"controlAggregation": "pages",
+					"controlId": "app",
+					"clearControlAggregation": false
+				},
+				"billingDocs": {
+					"viewName": "BillingDocs",
+					"viewType": "XML",
+					"viewId": "billingDocs"
 				}
 			}
 		}
