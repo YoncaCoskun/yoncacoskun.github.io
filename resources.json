@@ -26,6 +26,9 @@
             "name": "controller/App.controller.js"
         },
         {
+            "name": "controller/BaseController.js"
+        },
+        {
             "name": "controller/BillingDocs.controller.js"
         },
         {
@@ -72,6 +75,13 @@
         },
         {
             "name": "package.json"
+        },
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": "sap-ui-cachebuster-info.json"
         },
         {
             "name": "view/App.view.xml"
