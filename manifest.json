@@ -61,9 +61,11 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -75,25 +77,29 @@
 				"controlId": "app",
 				"clearControlAggregation": false
 			},
-			"routes": [{
-				"pattern": "",
-				"name": "indexTiles",
-				"target": [
-					"indexTiles"
-				]
-			}, {
-				"pattern": "vendors",
-				"name": "vendors",
-				"target": [
-					"vendors"
-				]
-			}, {
-				"pattern": "billingDocs",
-				"name": "billingDocs",
-				"target": [
-					"billingDocs"
-				]
-			}],
+			"routes": [
+				{
+					"pattern": "",
+					"name": "indexTiles",
+					"target": [
+						"indexTiles"
+					]
+				},
+				{
+					"pattern": "vendors",
+					"name": "vendors",
+					"target": [
+						"vendors"
+					]
+				},
+				{
+					"pattern": "billingDocs",
+					"name": "billingDocs",
+					"target": [
+						"billingDocs"
+					]
+				}
+			],
 			"targets": {
 				"indexTiles": {
 					"viewName": "IndexTiles",
@@ -122,7 +128,13 @@
 				"billingDocs": {
 					"viewName": "billing.BillingDocs",
 					"viewType": "XML",
+					"viewLevel": 2,
+					"controlId": "app",
 					"viewId": "billingDocs"
+				},
+				"NotFound": {
+					"viewType": "XML",
+					"viewName": "NotFound"
 				}
 			}
 		}
