@@ -1,0 +1,10 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ems.UI5Showcase.controller.vendors.Vendors"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>vendorCentral}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<Label text="First Name" class="sapUiSmallMargin"/>
+			<Input value="{/firstName}" valueLiveUpdate="true" width="200px" enabled="{/enabled}"/>
+			<Label text="HELLOOO!!! {/firstName}" class="sapUiSmallMargin"/>
+		</content>
+	</Page>
+</mvc:View>

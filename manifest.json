@@ -38,7 +38,7 @@
 		"rootView": {
 			"viewName": "ems.UI5Showcase.view.App",
 			"type": "XML",
-			"id": "App"
+			"id": "app"
 		},
 		"dependencies": {
 			"minUI5Version": "1.30.0",
@@ -108,7 +108,7 @@
 					"clearControlAggregation": false
 				},
 				"vendors": {
-					"viewName": "Vendors",
+					"viewName": "vendors.Vendors",
 					"viewType": "XML",
 					"viewId": "vendors",
 					"viewLevel": 2,
@@ -120,7 +120,7 @@
 					"clearControlAggregation": false
 				},
 				"billingDocs": {
-					"viewName": "BillingDocs",
+					"viewName": "billing.BillingDocs",
 					"viewType": "XML",
 					"viewId": "billingDocs"
 				}

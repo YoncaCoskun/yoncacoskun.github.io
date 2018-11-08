@@ -3,8 +3,8 @@ sap.ui.define([
 ], function (BaseController) {
 	"use strict";
 
-	return BaseController.extend("ems.UI5Showcase.controller.BillingDocs", {
-
+	return BaseController.extend("ems.UI5Showcase.controller.billing.BillingDocs", {
+	
 	});
 
 });
