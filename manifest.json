@@ -75,7 +75,12 @@
 				"viewPath": "ems.UI5Showcase.view",
 				"controlAggregation": "pages",
 				"controlId": "app",
-				"clearControlAggregation": false
+				"clearControlAggregation": false,
+				"bypassed": {
+					"target": [
+						"notFound"
+					]
+				}
 			},
 			"routes": [
 				{
@@ -132,7 +137,7 @@
 					"controlId": "app",
 					"viewId": "billingDocs"
 				},
-				"NotFound": {
+				"notFound": {
 					"viewType": "XML",
 					"viewName": "NotFound"
 				}
