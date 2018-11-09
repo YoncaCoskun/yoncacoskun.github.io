@@ -13,15 +13,7 @@
 			"id": "ui5template.basicSAPUI5ApplicationProject",
 			"version": "1.40.12"
 		},
-		"dataSources": {
-			"mainService": {
-				"uri": "/destinations/northwind/V2/Northwind/Northwind.svc/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0"
-				}
-			}
-		}
+		"dataSources": {}
 	},
 	"sap.ui": {
 		"technology": "UI5",
@@ -54,8 +46,7 @@
 			"libs": {
 				"sap.ui.layout": {},
 				"sap.ui.core": {},
-				"sap.m": {},
-				"sap.f": {}
+				"sap.m": {}
 			}
 		},
 		"contentDensities": {
@@ -67,14 +58,6 @@
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
 					"bundleName": "ems.UI5Showcase.i18n.i18n"
-				}
-			},
-			"": {
-				"dataSource": "mainService",
-				"settings": {
-					"metadataUrlParams": {
-						"sap-documentation": "heading"
-					}
 				}
 			}
 		},
@@ -152,6 +135,10 @@
 				"notFound": {
 					"viewType": "XML",
 					"viewName": "NotFound"
+				},
+				"VendorDetail": {
+					"viewType": "XML",
+					"viewName": "VendorDetail"
 				}
 			}
 		}
