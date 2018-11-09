@@ -12,6 +12,15 @@
 		"sourceTemplate": {
 			"id": "ui5template.basicSAPUI5ApplicationProject",
 			"version": "1.40.12"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/destinations/northwind/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
 		}
 	},
 	"sap.ui": {
@@ -45,7 +54,8 @@
 			"libs": {
 				"sap.ui.layout": {},
 				"sap.ui.core": {},
-				"sap.m": {}
+				"sap.m": {},
+				"sap.f": {}
 			}
 		},
 		"contentDensities": {
@@ -58,14 +68,20 @@
 				"settings": {
 					"bundleName": "ems.UI5Showcase.i18n.i18n"
 				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"metadataUrlParams": {
+						"sap-documentation": "heading"
+					}
+				}
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -82,29 +98,25 @@
 					]
 				}
 			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "indexTiles",
-					"target": [
-						"indexTiles"
-					]
-				},
-				{
-					"pattern": "vendors",
-					"name": "vendors",
-					"target": [
-						"vendors"
-					]
-				},
-				{
-					"pattern": "billingDocs",
-					"name": "billingDocs",
-					"target": [
-						"billingDocs"
-					]
-				}
-			],
+			"routes": [{
+				"pattern": "",
+				"name": "indexTiles",
+				"target": [
+					"indexTiles"
+				]
+			}, {
+				"pattern": "vendors",
+				"name": "vendors",
+				"target": [
+					"vendors"
+				]
+			}, {
+				"pattern": "billingDocs",
+				"name": "billingDocs",
+				"target": [
+					"billingDocs"
+				]
+			}],
 			"targets": {
 				"indexTiles": {
 					"viewName": "IndexTiles",

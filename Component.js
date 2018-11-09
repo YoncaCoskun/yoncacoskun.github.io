@@ -18,9 +18,12 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function () {
+			var oProductsModel;
 
-			var oModel = new JSONModel(sap.ui.require.toUrl("ems/UI5Showcase/model/") + "/feed.json");
-			this.setModel(oModel);
+			// set products demo model on this sample
+			oProductsModel = new JSONModel(jQuery.sap.getModulePath('sap.ui.demo.mock', '/products.json'));
+			oProductsModel.setSizeLimit(1000);
+			this.setModel(oProductsModel, 'products');
 
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
