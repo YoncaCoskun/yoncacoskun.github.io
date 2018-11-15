@@ -3,11 +3,12 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-	'sap/ui/model/Sorter'
+	"sap/ui/model/Sorter"
 ], function (BaseController, JSONModel, Filter, FilterOperator, Sorter) {
 	"use strict";
 
 	return BaseController.extend("ems.UI5Showcase.controller.vendors.Vendors", {
+
 		onInit: function () {
 			this.oView = this.getView();
 			this._bDescendingSort = false;
@@ -32,6 +33,7 @@ sap.ui.define([
 
 			oBinding.sort(oSorter);
 		}
+
 	});
 
 });

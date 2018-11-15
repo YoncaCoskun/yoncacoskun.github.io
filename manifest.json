@@ -46,7 +46,8 @@
 			"libs": {
 				"sap.ui.layout": {},
 				"sap.ui.core": {},
-				"sap.m": {}
+				"sap.m": {},
+				"sap.f": {}
 			}
 		},
 		"contentDensities": {
@@ -135,11 +136,16 @@
 				"notFound": {
 					"viewType": "XML",
 					"viewName": "NotFound"
-				},
-				"VendorDetail": {
-					"viewType": "XML",
-					"viewName": "VendorDetail"
 				}
+			}
+		},
+		"config": {
+			"sapFiori2Adaptation": {
+				"style": false,
+				"collapse": false,
+				"title": true,
+				"back": true,
+				"hierarchy": true
 			}
 		}
 	}
