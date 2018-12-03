@@ -1,18 +1,26 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"ems/UI5Showcase/controller/BaseController",
+	"ems/UI5Showcase/bloc/ProductBloc"
+], function (BaseController, ProductBloc) {
 	"use strict";
-	var oRouter; 
-	//const url = 'https://yoncacoskun.github.io';
-	return Controller.extend("ems.UI5Showcase.controller.IndexTiles", {
+	var oRouter;
+	var modelSubject;
+	return BaseController.extend("ems.UI5Showcase.controller.IndexTiles", {
 		onInit: function () {
-			oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter = this.getRouter();
+			modelSubject = ProductBloc.getSubject();
 		},
+
 		onVendorTilePress: function (oEvent) {
 			oRouter.navTo("vendors");
 		},
-		onBillingDocsPress: function(oEvent){
+
+		onBillingDocsPress: function (oEvent) {
 			oRouter.navTo("billingDocs");
+		},
+
+		onExit: function () {
+			modelSubject.unsubscribe();
 		}
 	});
 
