@@ -1,38 +1,40 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta charset="UTF-8">
-		
-		<title>UI5 Apps Showcase</title>
 
-		<script id="sap-ui-bootstrap"
-			src="https://openui5.hana.ondemand.com/resources/sap-ui-cachebuster/sap-ui-core.js"
-			data-sap-ui-libs="sap.m"
-			data-sap-ui-theme="sap_belize"
-			data-sap-ui-preload="async"
-			data-sap-ui-bindingSyntax="complex"
-			data-sap-ui-compatVersion="edge"
-			data-sap-ui-resourceroots='{"ems.UI5Showcase": "./"}'>
-		</script>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="UTF-8">
 
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>UI5 Apps Showcase</title>
 
-		<script>
-			sap.ui.getCore().attachInit(function() {
-				new sap.m.Shell({
-					app: new sap.ui.core.ComponentContainer({
-						height : "100%",
-						name : "ems.UI5Showcase"
-					})
-				}).placeAt("content");
-			}); 
-		</script>
-	</head>
+	<!-- Load RxJs Library Asynchronously , it will create global Rx variable-->
+	<script defer src="https://unpkg.com/@reactivex/rxjs@5.0.0-beta.12/dist/global/Rx.js"></script>
 
-	<body class="sapUiBody" id="content">
-		<marquee behavior="scroll" direction="left">This app is still under development, 
-		<a href="https://github.com/YoncaCoskun/yoncacoskun.github.io" target="_blank"> click here to visit Github repository</a> or access to developer's 
+	<!-- Load UI5 Library-->
+	<script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/resources/sap-ui-cachebuster/sap-ui-core.js"
+	 data-sap-ui-libs="sap.m" data-sap-ui-theme="sap_belize" data-sap-ui-preload="async" data-sap-ui-bindingSyntax="complex"
+	 data-sap-ui-compatVersion="edge" data-sap-ui-resourceroots='{"ems.UI5Showcase": "./"}'>
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script>
+		sap.ui.getCore().attachInit(function () {
+			new sap.m.Shell({
+				app: new sap.ui.core.ComponentContainer({
+					height: "100%",
+					name: "ems.UI5Showcase"
+				})
+			}).placeAt("content");
+		});
+	</script>
+</head>
+
+<body class="sapUiBody" id="content">
+	<marquee behavior="scroll" direction="left">This app is still under development,
+		<a href="https://github.com/YoncaCoskun/yoncacoskun.github.io" target="_blank"> click here to visit Github repository</a>
+		or access to developer's
 		<a href="https://drive.google.com/open?id=1Ztbevp6hhIyEf3oDjTbGIU0hK2Lx0mec" target="_blank"> Résumé...</a></marquee>
-	</body>
+</body>
+
 </html>

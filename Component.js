@@ -2,8 +2,9 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
 	"ems/UI5Showcase/model/models",
-	"sap/ui/model/json/JSONModel"
-], function (UIComponent, Device, models, JSONModel) {
+	"sap/ui/model/json/JSONModel",
+	"ems/UI5Showcase/bloc/ModelBloc"
+], function (UIComponent, Device, models, JSONModel, ModelBloc) {
 	"use strict";
 
 	return UIComponent.extend("ems.UI5Showcase.Component", {
@@ -18,10 +19,13 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function () {
-			var oProductsModel;
+			//Initialize the Rx Bloc
+			ModelBloc.initialize();
+			//Send first value to subcribers!
+			ModelBloc.inModel('COMPONENTJS');
 
 			// set products demo model on this sample
-			oProductsModel = new sap.ui.model.json.JSONModel('products.json');
+			var oProductsModel = new sap.ui.model.json.JSONModel('products.json');
 			oProductsModel.setSizeLimit(1000);
 			this.setModel(oProductsModel, 'products');
 

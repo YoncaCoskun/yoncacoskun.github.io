@@ -1,9 +1,8 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"ems/UI5Showcase/controller/BaseController"
+], function (BaseController) {
 	"use strict";
 
-	return Controller.extend("ems.UI5Showcase.controller.NotFound", {
-	});
+	return BaseController.extend("ems.UI5Showcase.controller.NotFound", {});
 
 });
