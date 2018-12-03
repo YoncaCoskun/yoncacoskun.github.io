@@ -1,19 +1,14 @@
 sap.ui.define([
 	"ems/UI5Showcase/controller/BaseController",
-	"ems/UI5Showcase/bloc/ModelBloc"
-], function (BaseController, ModelBloc) {
+	"ems/UI5Showcase/bloc/ProductBloc"
+], function (BaseController, ProductBloc) {
 	"use strict";
 	var oRouter;
-	var oModelSubject;
+	var modelSubject;
 	return BaseController.extend("ems.UI5Showcase.controller.IndexTiles", {
 		onInit: function () {
 			oRouter = this.getRouter();
-			this._subscribeToBloc();
-		},
-
-		_subscribeToBloc: function () {
-			//Get ReplaySubject & Subscrib
-			ModelBloc.subscribe();
+			modelSubject = ProductBloc.getSubject();
 		},
 
 		onVendorTilePress: function (oEvent) {
@@ -25,7 +20,7 @@ sap.ui.define([
 		},
 
 		onExit: function () {
-			oModelSubject.unsubscribe();
+			modelSubject.unsubscribe();
 		}
 	});
 
