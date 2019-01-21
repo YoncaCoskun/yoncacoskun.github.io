@@ -29,6 +29,12 @@ sap.ui.define([
 			ProductBloc.initialize();
 			ProductBloc.inProduct(oProductsModel); //Add to sink!
 
+			var oBillDocsModel;
+			// set products demo model on this sample
+			oBillDocsModel = new JSONModel('/billingdocs.json');
+			oBillDocsModel.setSizeLimit(1000);
+			this.setModel(oBillDocsModel, 'billing');
+
 
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
@@ -38,6 +44,21 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+		},
+
+		getContentDensityClass: function () {
+			if (this._contentDensityClass === undefined) {
+				// check whether FLP has already set the content density class; do nothing in this case
+				if (jQuery(document.body).hasClass("sapUiSizeCozy") || jQuery(document.body).hasClass("sapUiSizeCompact")) {
+					this._contentDensityClass = "";
+				} else if (!Device.support.touch) { // apply "compact" mode if touch is not supported
+					this._contentDensityClass = "sapUiSizeCompact";
+				} else {
+					// "cozy" in case of touch support; default for most sap.m controls, but needed for desktop-first controls like sap.ui.table.Table
+					this._contentDensityClass = "sapUiSizeCozy";
+				}
+			}
+			return this._contentDensityClass;
 		}
 	});
 });
