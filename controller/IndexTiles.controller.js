@@ -21,6 +21,9 @@ sap.ui.define([
 
 		onExit: function () {
 			modelSubject.unsubscribe();
+		},
+		onPressbusinessAdministration: function () {
+			oRouter.navTo("businessAdmin");
 		}
 	});
 

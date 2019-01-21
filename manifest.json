@@ -111,6 +111,13 @@
 					"target": [
 						"billingDocs"
 					]
+				},
+				{
+					"pattern": "businessAdmin",
+					"name": "businessAdmin",
+					"target": [
+						"businessAdmin"
+					]
 				}
 			],
 			"targets": {
@@ -144,6 +151,13 @@
 					"viewLevel": 2,
 					"controlId": "app",
 					"viewId": "billingDocs"
+				},
+				"businessAdmin": {
+					"viewName": "BusinessAdmin",
+					"viewType": "XML",
+					"viewLevel": 2,
+					"controlId": "app",
+					"viewId": "businessAdmin"
 				},
 				"notFound": {
 					"viewType": "XML",
