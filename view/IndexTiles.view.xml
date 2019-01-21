@@ -7,7 +7,7 @@
 	xmlns:core="sap.ui.core" 
 	xmlns:footerbar="sap.ushell.ui.footerbar" 
 	xmlns:unified="sap.ui.unified" controllerName="ems.UI5Showcase.controller.IndexTiles">
-	<Page title="{i18n>appTitle}" showNavButton="false" backgroundDesign="Transparent">
+	<Page>
 		<content>
 			<uxap:ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" isChildPage="false" showHeaderContent="true">
 				<uxap:headerTitle>
@@ -20,6 +20,12 @@
 				</uxap:headerTitle>
 
 				<uxap:headerContent >
+					<!-- Admin -->
+					<TileContainer class="launchpad-margin-left" id="launchpadContainerBA1" height="11rem">
+						<tiles>
+							<StandardTile id="BA1" icon="sap-icon://key-user-settings" title="{i18n>businessAdministration}" press="onPressbusinessAdministration" />
+						</tiles>
+					</TileContainer>
 					<!-- Business Transactions -->
 					<Label id="lpGroupHeaderS" text="{i18n>businessTransaction}" class="launchpad-groupHeader" width="100%" />
 					<TileContainer class="launchpad-margin-left" id="launchpadContainer1" height="11rem">
