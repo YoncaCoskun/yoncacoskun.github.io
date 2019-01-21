@@ -39,6 +39,7 @@
 		"rootView": {
 			"viewName": "ems.UI5Showcase.view.App",
 			"type": "XML",
+			"async": true,
 			"id": "app"
 		},
 		"dependencies": {
@@ -47,7 +48,8 @@
 				"sap.ui.layout": {},
 				"sap.ui.core": {},
 				"sap.m": {},
-				"sap.f": {}
+				"sap.f": {},
+				"sap.uxap": {}
 			}
 		},
 		"contentDensities": {
@@ -83,24 +85,27 @@
 				}
 			},
 			"routes": [{
-				"pattern": "",
-				"name": "indexTiles",
-				"target": [
-					"indexTiles"
-				]
-			}, {
-				"pattern": "vendors",
-				"name": "vendors",
-				"target": [
-					"vendors"
-				]
-			}, {
-				"pattern": "billingDocs",
-				"name": "billingDocs",
-				"target": [
-					"billingDocs"
-				]
-			}],
+					"pattern": "",
+					"name": "indexTiles",
+					"target": [
+						"indexTiles"
+					]
+				},
+				{
+					"pattern": "vendors",
+					"name": "vendors",
+					"target": [
+						"vendors"
+					]
+				},
+				{
+					"pattern": "billingDocs",
+					"name": "billingDocs",
+					"target": [
+						"billingDocs"
+					]
+				}
+			],
 			"targets": {
 				"indexTiles": {
 					"viewName": "IndexTiles",

@@ -29,6 +29,12 @@ sap.ui.define([
 			ProductBloc.initialize();
 			ProductBloc.inProduct(oProductsModel); //Add to sink!
 
+			var oBillDocsModel;
+			// set products demo model on this sample
+			oBillDocsModel = new JSONModel('/billingdocs.json');
+			oBillDocsModel.setSizeLimit(1000);
+			this.setModel(oBillDocsModel, 'billing');
+
 
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);

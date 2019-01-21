@@ -1,6 +1,11 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="ems.UI5Showcase.controller.billing.BillingDocs"
-	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="{i18n>billingDocuments}" showNavButton="true" navButtonPress="onNavBack">
-		<content></content>
-	</Page>
-</mvc:View>
+<View xmlns="sap.f" 
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" height="100%">
+	<FlexibleColumnLayout id="flexibleColumnLayout" stateChange="onStateChanged" backgroundDesign="Solid">
+		<beginColumnPages>
+			<mvc:XMLView id="beginView" viewName="ems.UI5Showcase.view.billing.MasterBillingDocs" />
+		</beginColumnPages>
+		<midColumnPages>
+			<mvc:XMLView id="detailView" viewName="ems.UI5Showcase.view.billing.DetailBillingDocs" />
+		</midColumnPages>
+	</FlexibleColumnLayout>
+</View>
