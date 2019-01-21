@@ -24,6 +24,21 @@ sap.ui.define([
         onListItemPress: function () {
             var oFCL = this.oView.getParent().getParent();
             oFCL.setLayout(sap.f.LayoutType.TwoColumnsMidExpanded);
+        },
+        onCreateDocument: function (event) {
+            if (!this._createDocumentDialog) {
+                this._createDocumentDialog = sap.ui.xmlfragment(this.getView().getId(),
+                    "ems.UI5Showcase.fragments.CreateDocument",
+                    this
+                );
+                this._createDocumentDialog.addStyleClass(this.getOwnerComponent().getContentDensityClass());
+                this.getView().addDependent(this._createDocumentDialog);
+
+            }
+            this._createDocumentDialog.open();
+        },
+        onAddCancelDocDialog: function () {
+            this._createDocumentDialog.close();
         }
     });
 }, true);

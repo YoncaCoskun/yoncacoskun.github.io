@@ -12,7 +12,7 @@
                 </f:heading>
 
                 <f:actions>
-                    <ToggleButton text="{i18n>createDocument}" type="Emphasized" press="onAddToggleButtonPress"/>
+                    <ToggleButton text="{i18n>createDocument}" type="Emphasized" press="onCreateDocument"/>
                 </f:actions>
             </f:DynamicPageTitle>
         </f:title>
