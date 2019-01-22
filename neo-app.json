@@ -1,21 +1,24 @@
 {
 	"welcomeFile": "/index.html",
 	"routes": [{
-		"path": "/resources",
-		"target": {
-			"type": "service",
-			"name": "sapui5",
-			"entryPath": "/resources"
+			"path": "/resources",
+			"target": {
+				"type": "service",
+				"name": "sapui5",
+				"entryPath": "/resources"
+			},
+			"description": "SAPUI5 Resources"
 		},
-		"description": "SAPUI5 Resources"
-	}, {
-		"path": "/destinations/northwind",
-		"target": {
-			"type": "destination",
-			"name": "northwind"
+		{
+			"path": "/northwind",
+			"target": {
+				"type": "destination",
+				"name": "northwind"
+			},
+			"description": "Northwind OData Service"
 		},
-		"description": "Northwind OData Service"
-	}, {
+	},
+	{
 		"path": "/test-resources",
 		"target": {
 			"type": "service",
@@ -24,5 +27,5 @@
 		},
 		"description": "SAPUI5 Test Resources"
 	}],
-	"sendWelcomeFileRedirect": true
+"sendWelcomeFileRedirect": true
 }

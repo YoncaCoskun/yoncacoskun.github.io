@@ -62,6 +62,18 @@
 				"settings": {
 					"bundleName": "ems.UI5Showcase.i18n.i18n"
 				}
+			},
+			"side": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/sideContent.json"
+			},
+			"alerts": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/alerts.json"
+			},
+			"products": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/product.json"
 			}
 		},
 		"resources": {
@@ -118,6 +130,13 @@
 					"target": [
 						"businessAdmin"
 					]
+				},
+				{
+					"pattern": "glAccount",
+					"name": "glAccount",
+					"target": [
+						"glAccount"
+					]
 				}
 			],
 			"targets": {
@@ -158,6 +177,13 @@
 					"viewLevel": 2,
 					"controlId": "app",
 					"viewId": "businessAdmin"
+				},
+				"glAccount": {
+					"viewName": "glAccount.GLAccount",
+					"viewType": "XML",
+					"viewLevel": 2,
+					"controlId": "app",
+					"viewId": "glAccount"
 				},
 				"notFound": {
 					"viewType": "XML",

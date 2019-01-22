@@ -2,7 +2,7 @@
   xmlns="sap.m" 
   xmlns:mvc="sap.ui.core.mvc" 
   xmlns:tnt="sap.tnt">
-  <tnt:ToolPage id="app" class="sapUiDemoToolPage">
+  <tnt:ToolPage id="businessAdminToolPage" class="sapUiDemoToolPage">
     <tnt:header>
       <tnt:ToolHeader>
         <Button id="sideNavigationToggleButton" icon="sap-icon://menu2" type="Transparent" press=".onSideNavButtonPress" tooltip="{i18n>navigationToggleButtonTooltip}">
@@ -11,7 +11,7 @@
           </layoutData>
         </Button>
         <ToolbarSpacer/>
-        <Title text="{i18n>appTitle}" level="H2"/>
+        <Title text="{i18n>appTitleAdmin}" level="H2"/>
         <ToolbarSpacer/>
         <Button id="errorButton" icon="sap-icon://message-popup" visible="{= ${alerts>/alerts/errors}.length === 0 ? false : true }" type="Transparent" press=".onMessagePopoverPress" tooltip="{i18n>errorButtonTooltip}">
           <layoutData>

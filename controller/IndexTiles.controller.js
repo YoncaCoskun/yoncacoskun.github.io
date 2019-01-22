@@ -24,6 +24,9 @@ sap.ui.define([
 		},
 		onPressbusinessAdministration: function () {
 			oRouter.navTo("businessAdmin");
+		},
+		toPressGeneralLedgerAccounts: function () {
+			oRouter.navTo("glAccount");
 		}
 	});
 

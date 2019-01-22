@@ -20,14 +20,18 @@ sap.ui.define([
 		 */
 		init: function () {
 
-			// set products demo model on this sample
-			var oProductsModel = new sap.ui.model.json.JSONModel('products.json');
-			oProductsModel.setSizeLimit(1000);
-			this.setModel(oProductsModel, 'products');
+			// call the init function of the parent
+			UIComponent.prototype.init.apply(this, arguments);
+			/*
+						// set products demo model on this sample
+						var oProductsModel = new sap.ui.model.json.JSONModel('products.json');
+						oProductsModel.setSizeLimit(1000);
+						this.setModel(oProductsModel, 'products');
 
-			//Initialize the Product Bloc
-			ProductBloc.initialize();
-			ProductBloc.inProduct(oProductsModel); //Add to sink!
+						//Initialize the Product Bloc
+						ProductBloc.initialize();
+						ProductBloc.inProduct(oProductsModel); //Add to sink!
+						*/
 
 			var oBillDocsModel;
 			// set products demo model on this sample
@@ -35,9 +39,11 @@ sap.ui.define([
 			oBillDocsModel.setSizeLimit(1000);
 			this.setModel(oBillDocsModel, 'billing');
 
-
-			// call the base component's init function
-			UIComponent.prototype.init.apply(this, arguments);
+			var oGLAccountModel;
+			// set products demo model on this sample
+			oGLAccountModel = new JSONModel('/model/product.json');
+			oGLAccountModel.setSizeLimit(1000);
+			this.setModel(oGLAccountModel, 'glaccount');
 
 			// enable routing
 			this.getRouter().initialize();
