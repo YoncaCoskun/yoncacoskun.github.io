@@ -10,21 +10,22 @@
     </semantic:titleHeading>
 
     <semantic:content>
-      <IconTabBar id="iconTabBar" select=".onQuickFilter" expandable="false" headerBackgroundDesign="Transparent">
+      <IconTabBar id="iconTabBar" select="onQuickFilter" expandable="false" headerBackgroundDesign="Transparent">
         <items>
           <IconTabFilter key="all" showAll="true" count="{worklistView>/countAll}" text="{i18n>WorklistFilterProductsAll}"/>
           <IconTabSeparator/>
-          <IconTabFilter key="inStock" icon="sap-icon://message-success" iconColor="Positive" count="{worklistView>/inStock}" text="{i18n>WorklistFilterInStock}"/>
-          <IconTabFilter key="shortage" icon="sap-icon://message-warning" iconColor="Critical" count="{worklistView>/shortage}" text="{i18n>WorklistFilterShortage}"/>
-          <IconTabFilter key="outOfStock" icon="sap-icon://message-error" iconColor="Negative" count="{worklistView>/outOfStock}" text="{i18n>WorklistFilterOutOfStock}"/>
+          <IconTabFilter key="highBalance" icon="sap-icon://message-success" iconColor="Positive" count="{worklistView>/highBalance}" text="{i18n>WorklistFilterHBalance}"/>
+          <IconTabFilter key="criticalBalance" icon="sap-icon://message-warning" iconColor="Critical" count="{worklistView>/criticalBalance}" text="{i18n>WorklistFilterCBalance}"/>
+          <IconTabFilter key="lowBalance" icon="sap-icon://message-error" iconColor="Negative" count="{worklistView>/lowBalance}" text="{i18n>WorklistFilterLBalance}"/>
         </items>
         <content>
           <Table id="tableGLAccount" busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true" noDataText="{worklistView>/tableNoDataText}" updateFinished=".onUpdateFinished" width="auto" mode="MultiSelect" items="{
-							path: 'glaccount>/productCollection',
+							path: 'glaccount>/',
 							sorter: {
 								path: 'name',
 								descending: false
-							}
+							},
+              parameters: { count : true }
 						}">
             <headerToolbar>
               <Toolbar>
@@ -36,38 +37,36 @@
             </headerToolbar>
 
             <columns>
-              <Column id="nameColumn">
-                <Text id="nameColumnTitle" text="{i18n>TableNameColumnTitle}"/>
+              <Column id="companyIdColumn">
+                <Text id="nameColumnTitle" text="{i18n>TableCompanyIDColumnTitle}"/>
               </Column>
-              <Column id="supplierNameColumn" demandPopin="false" minScreenWidth="Tablet">
-                <Text text="{i18n>TableSupplierColumnTitle}"/>
+              <Column id="partnerColumn" demandPopin="false" minScreenWidth="Tablet">
+                <Text text="{i18n>TablePartnerColumnTitle}"/>
               </Column>
-              <Column id="unitPriceColumn" hAlign="End" demandPopin="true" minScreenWidth="Tablet">
-                <Text text="{i18n>TablePriceColumnTitle}"/>
+              <Column id="debitColumn" hAlign="End" demandPopin="true" minScreenWidth="Tablet">
+                <Text text="{i18n>TableDebitColumnTitle}"/>
               </Column>
-              <Column id="unitsOnOrderColumn" demandPopin="true" minScreenWidth="Tablet" hAlign="End">
-                <Text text="{i18n>TableUnitsOrderedColumnTitle}"/>
+              <Column id="creditColumn" demandPopin="true" minScreenWidth="Tablet" hAlign="End">
+                <Text text="{i18n>TableCreditColumnTitle}"/>
               </Column>
-              <Column id="unitsInStockColumn" hAlign="End">
-                <Text text="{i18n>TableUnitsInStockColumnTitle}"/>
+              <Column id="balanceColumn" hAlign="End">
+                <Text text="{i18n>TableBalanceColumnTitle}"/>
               </Column>
             </columns>
             <items>
               <ColumnListItem type="Navigation" press="onPress">
                 <cells>
-                  <ObjectIdentifier title="{glaccount>name}"/>
-                  <Text text = "{glaccount>supplierID}"/>
+                  <ObjectIdentifier title="{glaccount>companyID}"/>
+                  <Text text = "{glaccount>partner}"/>
                   <ObjectNumber unit="EUR" number="{
-										path: 'glaccount>unitPrice',
+										path: 'glaccount>debit',
 										formatter: '.formatter.numberUnit'}"/>
                   <ObjectNumber number="{
-										path: 'glaccount>unitsOnOrder',
-										formatter: '.formatter.numberUnit'}" unit="PC"/>
+										path: 'glaccount>credit',
+										formatter: '.formatter.numberUnit'}" unit="EUR"/>
                   <ObjectNumber number="{
-										path: 'glaccount>unitsInStock',
-										formatter: '.formatter.numberUnit'}" unit="PC" state="{
-										path: 'glaccount>unitsInStock',
-										formatter: '.formatter.quantityState'}"/>
+										path: 'glaccount>balance',
+										formatter: '.formatter.numberUnit'}" unit="EUR"/>
                 </cells>
               </ColumnListItem>
             </items>
