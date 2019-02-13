@@ -35,7 +35,54 @@ sap.ui.define([
       } else {
         return ValueState.Success;
       }
+    },
+    /**
+     * Returns the relative URL to a product picture
+     * @param {string} sUrl image URL
+     * @return {string} relative image URL
+     */
+    pictureUrl: function (sUrl) {
+      if (sUrl) {
+        return sap.ui.require.toUrl(sUrl);
+      } else {
+        return undefined;
+      }
+    },
+    /**
+     * Returns the status text based on the product status
+     * @param {string} sStatus product status
+     * @return {string} the corresponding text if found or the original value
+     */
+    statusText: function (sStatus) {
+      var oBundle = this.getResourceBundle();
+
+      var mStatusText = {
+        "A": oBundle.getText("statusA"),
+        "O": oBundle.getText("statusO"),
+        "D": oBundle.getText("statusD")
+      };
+
+      return mStatusText[sStatus] || sStatus;
+    },
+    statusState: function (oOpen) {
+      if (oOpen === null) {
+        return "None";
+      }
+      if (oOpen === true) {
+        return "Open";
+      } else {
+        return "Closed";
+      }
+    },
+    colorState: function (oOpen) {
+
+      if (oOpen === true) {
+        return "Success";
+      } else { // delivery is in time
+        return "Error";
+      }
     }
+
 
 
 

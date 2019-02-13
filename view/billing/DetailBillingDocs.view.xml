@@ -19,7 +19,7 @@
             <m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
                 <m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
                     <m:Title text="{billing>BillDoc}" wrapping="true" class="sapUiTinyMarginTop"/>
-                    <m:Text text="Senior Developer"/>
+                    <m:Text text=""/>
 
                 </m:VBox>
             </m:FlexBox>

@@ -1,9 +1,12 @@
 sap.ui.define([
-	"ems/UI5Showcase/controller/BaseController"
-], function (BaseController) {
+	"./BaseController",
+	"sap/ui/model/json/JSONModel"
+], function (BaseController, JSONModel) {
 	"use strict";
-	//url for the repo
+
 	return BaseController.extend("ems.UI5Showcase.controller.App", {
+
+		onInit: function () {}
 
 	});
 });

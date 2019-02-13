@@ -137,6 +137,13 @@
 					"target": [
 						"glAccount"
 					]
+				},
+				{
+					"pattern": "customer",
+					"name": "customer",
+					"target": [
+						"customer"
+					]
 				}
 			],
 			"targets": {
@@ -185,10 +192,18 @@
 					"controlId": "app",
 					"viewId": "glAccount"
 				},
+				"customer": {
+					"viewName": "customers.Customer",
+					"viewType": "XML",
+					"viewLevel": 2,
+					"controlId": "app",
+					"viewId": "customer"
+				},
 				"notFound": {
 					"viewType": "XML",
 					"viewName": "NotFound"
 				}
+
 			}
 		},
 		"config": {

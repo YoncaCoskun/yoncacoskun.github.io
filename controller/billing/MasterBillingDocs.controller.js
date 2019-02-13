@@ -11,7 +11,7 @@ sap.ui.define([
         onInit: function () {
             this.oView = this.getView();
             this._bDescendingSort = false;
-            this.oDocsTable = this.oView.byId("docsTable");
+            this.oDocsTable = this.oView.byId("list");
         },
         onSearch: function (oEvent) {
             var oTableSearchState = [],
