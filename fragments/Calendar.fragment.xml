@@ -1,0 +1,12 @@
+<core:FragmentDefinition mlns="sap.m" 
+  xmlns:u="sap.ui.unified" 
+  xmlns:core="sap.ui.core">
+  <Popover title="Calendar" class="sapUiContentPadding" placement="Bottom">
+    <footer>
+      <Toolbar>
+        <ToolbarSpacer/>
+        <u:Calendar id="calendar" select="handleCalendarSelect" />
+      </Toolbar>
+    </footer>
+  </Popover>
+</core:FragmentDefinition>

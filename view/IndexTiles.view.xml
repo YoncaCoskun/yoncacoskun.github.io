@@ -13,7 +13,7 @@
 				<uxap:headerTitle>
 					<uxap:ObjectPageHeader objectTitle="{ContractNumber}" isObjectTitleAlwaysVisible="true" isObjectSubtitleAlwaysVisible="true">
 						<uxap:actions>
-							<uxap:ObjectPageHeaderActionButton icon="sap-icon://calendar" press="onPressOpenCalendar"/>
+							<uxap:ObjectPageHeaderActionButton icon="sap-icon://calendar" press="handlePopoverPress"/>
 							<uxap:ObjectPageHeaderActionButton icon="sap-icon://sys-help" press="onPressHelp"/>
 						</uxap:actions>
 					</uxap:ObjectPageHeader>

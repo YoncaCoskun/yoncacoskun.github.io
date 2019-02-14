@@ -1,7 +1,8 @@
 sap.ui.define([
 	"ems/UI5Showcase/controller/BaseController",
-	"ems/UI5Showcase/bloc/ProductBloc"
-], function (BaseController, ProductBloc) {
+	"ems/UI5Showcase/bloc/ProductBloc",
+	"sap/ui/core/Fragment"
+], function (BaseController, ProductBloc, Fragment) {
 	"use strict";
 	var oRouter;
 	var modelSubject;
@@ -30,7 +31,14 @@ sap.ui.define([
 		},
 		toPressCustomers: function () {
 			oRouter.navTo("customer");
+		},
+		handlePopoverPress: function (oEvent) {
+			// create popover
+			if (!this._oPopover) {
+				this._oPopover = sap.ui.xmlfragment("ems.UI5Showcase.fragments.Calendar", this);
+				this.getView().addDependent(this._oPopover);
+			}
+			this._oPopover.openBy(oEvent.getSource());
 		}
 	});
-
 });
