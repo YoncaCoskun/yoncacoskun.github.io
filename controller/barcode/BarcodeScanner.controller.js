@@ -93,7 +93,6 @@ sap.ui.define([
 
         if (!this._oQuaggaEventHandlersAttached) {
           // Attach event handlers...
-
           Quagga.onProcessed(function (result) {
             var drawingCtx = Quagga.canvas.ctx.overlay,
               drawingCanvas = Quagga.canvas.dom.overlay;
