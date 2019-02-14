@@ -41,6 +41,9 @@ sap.ui.define([
 			},
 			onDevResume: function () {
 				window.open("https://drive.google.com/open?id=1Ztbevp6hhIyEf3oDjTbGIU0hK2Lx0mec");
+			},
+			onNavBarcodeScanner: function () {
+				oRouter.navTo("barcodeScanner");
 			}
 		});
 	});

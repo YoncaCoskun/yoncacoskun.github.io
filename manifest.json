@@ -86,7 +86,10 @@
 				{
 					"uri": "css/opera.css"
 				}
-			]
+			],
+			"js": [{
+				"uri": "libs/quagga.min.js"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -144,6 +147,12 @@
 					"target": [
 						"customer"
 					]
+				}, {
+					"pattern": "barcodeScanner",
+					"name": "barcodeScanner",
+					"target": [
+						"barcodeScanner"
+					]
 				}
 			],
 			"targets": {
@@ -198,6 +207,13 @@
 					"viewLevel": 2,
 					"controlId": "app",
 					"viewId": "customer"
+				},
+				"barcodeScanner": {
+					"viewName": "barcode.BarcodeScanner",
+					"viewType": "XML",
+					"viewLevel": 2,
+					"controlId": "app",
+					"viewId": "barcodeScanner"
 				},
 				"notFound": {
 					"viewType": "XML",

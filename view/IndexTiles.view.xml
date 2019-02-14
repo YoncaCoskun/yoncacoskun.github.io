@@ -30,8 +30,10 @@
 					<TileContainer class="launchpad-margin-left" id="launchpadContainerBA1" height="11rem">
 						<tiles>
 							<StandardTile id="BA1" icon="sap-icon://key-user-settings" title="{i18n>businessAdministration}" press="onPressbusinessAdministration" />
-							<StandardTile id="BA2" icon="sap-icon://message-popup" title="{i18n>chat}" press="onNavChat" />
+							<StandardTile id="BA2" icon="sap-icon://add-photo" title="{i18n>barcodeScanner}" press="onNavBarcodeScanner" />
+							<StandardTile id="BA3" icon="sap-icon://message-popup" title="{i18n>chat}" press="onNavChat" />
 						</tiles>
+
 					</TileContainer>
 					<!-- Business Transactions -->
 					<Label id="lpGroupHeaderS" text="{i18n>businessTransaction}" class="launchpad-groupHeader" width="100%" />
