@@ -13,44 +13,41 @@ sap.ui.define([
       this._bDescendingSort = false;
       this.oDocsTable = this.oView.byId("customerList");
     },
-
-    onPressNavToDetail: function () {
-      this.getSplitContObj().to(this.createId("detailDetail"));
-    },
-
-    onPressDetailBack: function () {
-      this.getSplitContObj().backDetail();
-    },
-
-    onPressMasterBack: function () {
-      this.getSplitContObj().backMaster();
-    },
-
-    onPressGoToMaster: function () {
-      this.getSplitContObj().toMaster(this.createId("master2"));
-    },
-
-    onListItemPress: function (oEvent) {
-      var sToPageId = oEvent.getParameter("listItem").getCustomData()[0].getValue();
-
-      this.getSplitContObj().toDetail(this.createId(sToPageId));
-    },
-
-    onPressModeBtn: function (oEvent) {
-      var sSplitAppMode = oEvent.getSource().getSelectedButton().getCustomData()[0].getValue();
-
-      this.getSplitContObj().setMode(sSplitAppMode);
-      MessageToast.show("Split Container mode is changed to: " + sSplitAppMode, {
-        duration: 5000
-      });
-    },
-
-    getSplitContObj: function () {
-      var result = this.byId("SplitContDemo");
-      if (!result) {
-        jQuery.sap.log.error("SplitApp object can't be found");
+    onPressResize: function () {
+      if (this.byId("btnResize").getTooltip() == "Minimize") {
+        if (sap.ui.Device.system.phone) {
+          this.byId("vbi").minimize(132, 56, 1320, 560); // Height: 3,5 rem; Width: 8,25 rem
+        } else {
+          this.byId("vbi").minimize(168, 72, 1680, 720); // Height: 4,5 rem; Width: 10,5 rem
+        }
+        this.byId("btnResize").setTooltip("Maximize");
+      } else {
+        this.byId("vbi").maximize();
+        this.byId("btnResize").setTooltip("Minimize");
       }
-      return result;
+    },
+
+    onRegionClick: function (e) {
+      sap.m.MessageToast.show("onRegionClick " + e.getParameter("code"));
+    },
+
+    onRegionContextMenu: function (e) {
+      sap.m.MessageToast.show("onRegionContextMenu " + e.getParameter("code"));
+    },
+    onClickItem: function (evt) {
+      alert("onClick");
+    },
+
+    onContextMenuItem: function (evt) {
+      alert("onContextMenu");
+    },
+
+    onClickSpot: function (evt) {
+      alert("onClickSpot " + evt.getSource().getBindingContext().getProperty("tooltip"));
+    },
+
+    onContextMenuSpot: function (evt) {
+      alert("onContextMenuSpot " + evt.getSource().getBindingContext().getProperty("tooltip"));
     }
 
   });

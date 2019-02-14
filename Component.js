@@ -60,6 +60,12 @@ sap.ui.define([
 				oCustomerSectorModel.setSizeLimit(1000);
 				this.setModel(oCustomerSectorModel, 'sectorCategory');
 
+				var odataMapModel;
+				// set products demo model on this sample
+				odataMapModel = new JSONModel('/model/data.json');
+				odataMapModel.setSizeLimit(1000);
+				this.setModel(odataMapModel, 'map');
+
 				// enable routing
 				this.getRouter().initialize();
 
