@@ -25,45 +25,36 @@ sap.ui.define([
 
 				// call the init function of the parent
 				UIComponent.prototype.init.apply(this, arguments);
-				/*
-							// set products demo model on this sample
-							var oProductsModel = new sap.ui.model.json.JSONModel('products.json');
-							oProductsModel.setSizeLimit(1000);
-							this.setModel(oProductsModel, 'products');
 
-							//Initialize the Product Bloc
-							ProductBloc.initialize();
-							ProductBloc.inProduct(oProductsModel); //Add to sink!
-							*/
-
-				var oBillDocsModel;
 				// set products demo model on this sample
-				oBillDocsModel = new JSONModel('/billingdocs.json');
-				oBillDocsModel.setSizeLimit(1000);
+				var oProductsModel = new sap.ui.model.json.JSONModel('/model/products.json');
+				oProductsModel.setSizeLimit(30);
+				this.setModel(oProductsModel, 'products');
+
+
+				// set products demo model on this sample
+				var oBillDocsModel = new JSONModel('/model/billingdocs.json');
+				oBillDocsModel.setSizeLimit(30);
 				this.setModel(oBillDocsModel, 'billing');
 
-				var oGLAccountModel;
 				// set products demo model on this sample
-				oGLAccountModel = new JSONModel('/model/product.json');
-				oGLAccountModel.setSizeLimit(1000);
+				var oGLAccountModel = new JSONModel('/model/product.json');
+				oGLAccountModel.setSizeLimit(30);
 				this.setModel(oGLAccountModel, 'glaccount');
 
-				var oCustomersModel;
 				// set products demo model on this sample
-				oCustomersModel = new JSONModel('/model/customers.json');
-				oCustomersModel.setSizeLimit(1000);
+				var oCustomersModel = new JSONModel('/model/customers.json');
+				oCustomersModel.setSizeLimit(30);
 				this.setModel(oCustomersModel, 'customer');
 
-				var oCustomerSectorModel;
 				// set products demo model on this sample
-				oCustomerSectorModel = new JSONModel('/model/customerSectorCategory.json');
-				oCustomerSectorModel.setSizeLimit(1000);
+				var oCustomerSectorModel = new JSONModel('/model/customerSectorCategory.json');
+				oCustomerSectorModel.setSizeLimit(30);
 				this.setModel(oCustomerSectorModel, 'sectorCategory');
 
-				var odataMapModel;
 				// set products demo model on this sample
-				odataMapModel = new JSONModel('/model/data.json');
-				odataMapModel.setSizeLimit(1000);
+				var odataMapModel = new JSONModel('/model/data.json');
+				odataMapModel.setSizeLimit(30);
 				this.setModel(odataMapModel, 'map');
 
 				// enable routing
