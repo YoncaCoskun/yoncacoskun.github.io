@@ -88,9 +88,11 @@
 				}
 			],
 			"js": [{
-				"uri": "libs/quagga.min.js"
+				"uri": "libs/quagga.min.js",
+				"async": true
 			}, {
-				"uri": "libs/signature_pad.min.js"
+				"uri": "libs/signature_pad.min.js",
+				"async": true
 			}]
 		},
 		"routing": {

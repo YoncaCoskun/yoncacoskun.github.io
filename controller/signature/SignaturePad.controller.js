@@ -8,6 +8,7 @@ sap.ui.define([
       onInit: function () {
         this.getView().byId("html").setContent("<canvas id='signature-pad' width='400' height='200' class='signature-pad'></canvas>");
       },
+
       onSign: function (oEvent) {
         canvas = document.getElementById("signature-pad");
         signaturePad = new SignaturePad(canvas, {
@@ -15,7 +16,6 @@ sap.ui.define([
         });
       },
 
-      /***********Download the Signature Pad********************/
       saveButton: function (oEvent) {
         canvas = document.getElementById("signature-pad");
         var link = document.createElement('a');
@@ -28,7 +28,6 @@ sap.ui.define([
         });
       },
 
-      /************Clear Signature Pad**************************/
       clearButton: function (oEvent) {
         canvas = document.getElementById("signature-pad");
         var context = canvas.getContext("2d");
