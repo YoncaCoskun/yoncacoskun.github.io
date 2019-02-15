@@ -5,11 +5,13 @@
   <tnt:ToolPage id="businessAdminToolPage" class="sapUiDemoToolPage">
     <tnt:header>
       <tnt:ToolHeader>
+        <Button id="backButton" icon="sap-icon://nav-back" type="Transparent" press="onNavBack" tooltip="{i18n>navigationToggleButtonTooltip}"/>
         <Button id="sideNavigationToggleButton" icon="sap-icon://menu2" type="Transparent" press=".onSideNavButtonPress" tooltip="{i18n>navigationToggleButtonTooltip}">
           <layoutData>
             <OverflowToolbarLayoutData priority="NeverOverflow"/>
           </layoutData>
         </Button>
+
         <ToolbarSpacer/>
         <Title text="{i18n>appTitleAdmin}" level="H2"/>
         <ToolbarSpacer/>

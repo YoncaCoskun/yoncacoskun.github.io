@@ -44,6 +44,9 @@ sap.ui.define([
 			},
 			onNavBarcodeScanner: function () {
 				oRouter.navTo("barcodeScanner");
+			},
+			onNavSignaturePad: function () {
+				oRouter.navTo("signaturePad");
 			}
 		});
 	});
