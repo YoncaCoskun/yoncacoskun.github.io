@@ -134,3 +134,8 @@
 .sapMObjLStatusDiv {
     width: 80% !important;
 }
+
+.fixedListHeight {
+    height: 300px !important;
+    border: 1px solid black !important;
+}

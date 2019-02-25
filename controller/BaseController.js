@@ -43,5 +43,36 @@ sap.ui.define([
 		getMessageManagerUtils: function () {
 			return this.getOwnerComponent()._messageManagerUtils;
 		},
+
+		_promisify: function (oModel, sMethod, iParametersIndex) {
+			return function () {
+				var aArguments = [].slice.call(arguments);
+				return new Promise(function (fnResolve, fnReject) {
+					var mParameters = aArguments[iParametersIndex] || {};
+					aArguments[iParametersIndex] = Object.assign(mParameters, {
+						success: function (oData, oResponse) {
+							fnResolve({
+								data: oData,
+								response: oResponse
+							});
+						},
+						error: function (oError) {
+							fnReject(new Error(oError.message));
+						}
+					});
+					oModel[sMethod].apply(oModel, aArguments);
+				});
+			};
+		},
+
+		promisify: function (oModel) {
+			return {
+				create: _promisify(oModel, "create", 2),
+				read: _promisify(oModel, "read", 1),
+				update: _promisify(oModel, "update", 2),
+				remove: _promisify(oModel, "update", 1),
+				callFunction: _promisify(oModel, "callFunction", 1)
+			};
+		},
 	});
 });

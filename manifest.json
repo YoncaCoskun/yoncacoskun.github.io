@@ -164,6 +164,13 @@
 					"target": [
 						"signaturePad"
 					]
+				},
+				{
+					"pattern": "messenger",
+					"name": "messenger",
+					"target": [
+						"messenger"
+					]
 				}
 			],
 			"targets": {
@@ -223,15 +230,19 @@
 					"viewName": "barcode.BarcodeScanner",
 					"viewType": "XML",
 					"viewLevel": 2,
-					"controlId": "app",
 					"viewId": "barcodeScanner"
 				},
 				"signaturePad": {
 					"viewName": "signature.SignaturePad",
 					"viewType": "XML",
 					"viewLevel": 2,
-					"controlId": "app",
 					"viewId": "signaturePad"
+				},
+				"messenger": {
+					"viewName": "messenger.Messenger",
+					"viewType": "XML",
+					"viewLevel": 2,
+					"viewId": "messenger"
 				},
 				"notFound": {
 					"viewType": "XML",
