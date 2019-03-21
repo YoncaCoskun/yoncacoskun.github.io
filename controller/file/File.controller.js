@@ -12,8 +12,29 @@ sap.ui.define([
 
 			},
 			handleUploadPress: function () {
+				var oUploader = this.getView().byId("fileUploader");
+				var domRef = oUploader.getFocusDomRef();
+				var file = domRef.files[0];
+				var reader = new FileReader();
+				debugger;
+				reader.readAsBinaryString(file);
+				var data = reader.result;
+				var fileContent = XLSX.read(data, {
+					type: "binary"
+				});
+				debugger;
+				var excelContent = fileContent.Strings;
+				delete excelContent.Unique;
+				delete excelContent.Count;
 				var parentNode = document.getElementById("textGrid");
+
+				debugger;
 				var grid = canvasDatagrid({
+					parentNode: parentNode,
+					data: excelContent
+				});
+
+				/* var grid = canvasDatagrid({
 					parentNode: parentNode,
 					data: [{
 							col1: 'foo',
@@ -31,33 +52,7 @@ sap.ui.define([
 							col3: 'c'
 						}
 					]
-				});
-
-				var oUploader = this.getView().byId("fileUploader");
-				var domRef = oUploader.getFocusDomRef();
-				var file = domRef.files[0];
-				var reader = new FileReader();
-				reader.readAsBinaryString(file);
-				var fileContent = XLSX.read(reader.result, {
-					type: "binary"
-				});
-
-
-
-			},
-			handleUploadComplete: function (oEvent) {
-				var sResponse = oEvent.getParameter("response");
-				if (sResponse) {
-					var sMsg = "";
-					var m = /^\[(\d\d\d)\]:(.*)$/.exec(sResponse);
-					if (m[1] == "200") {
-						sMsg = "Return Code: " + m[1] + "\n" + m[2] + "(Upload Success)";
-						oEvent.getSource().setValue("");
-					} else {
-						sMsg = "Return Code: " + m[1] + "\n" + m[2] + "(Upload Error)";
-					}
-					MessageToast.show(sMsg);
-				}
+				}); */
 			}
 		});
 	});
