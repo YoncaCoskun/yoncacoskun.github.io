@@ -11,28 +11,34 @@ sap.ui.define([
 			onAfterRendering: function () {
 
 			},
+			processFiles: function (data) {
+				return new Promise(function (res, rej) {
+
+				});
+			},
 			handleUploadPress: function () {
 				var oUploader = this.getView().byId("fileUploader");
 				var domRef = oUploader.getFocusDomRef();
 				var file = domRef.files[0];
 				var reader = new FileReader();
-				debugger;
 				reader.readAsBinaryString(file);
 				var data = reader.result;
 				var fileContent = XLSX.read(data, {
 					type: "binary"
 				});
-				debugger;
 				var excelContent = fileContent.Strings;
-				delete excelContent.Unique;
-				delete excelContent.Count;
-				var parentNode = document.getElementById("textGrid");
+				if (excelContent !== undefined) {
+					delete excelContent.Unique;
+					delete excelContent.Count;
+					var parentNode = document.getElementById("textGrid");
+					var grid = canvasDatagrid({
+						parentNode: parentNode,
+						data: excelContent
+					});
+				} else {
+					console.error('Can\'t read the file!');
+				}
 
-				debugger;
-				var grid = canvasDatagrid({
-					parentNode: parentNode,
-					data: excelContent
-				});
 
 				/* var grid = canvasDatagrid({
 					parentNode: parentNode,
