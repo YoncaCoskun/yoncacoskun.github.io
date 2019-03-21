@@ -93,6 +93,9 @@
 			}, {
 				"uri": "libs/signature_pad.min.js",
 				"async": true
+			}, {
+				"uri": "libs/canvas-datagrid.js",
+				"async": true
 			}]
 		},
 		"routing": {
@@ -171,6 +174,13 @@
 					"target": [
 						"messenger"
 					]
+				},
+				{
+					"pattern": "file",
+					"name": "file",
+					"target": [
+						"file"
+					]
 				}
 			],
 			"targets": {
@@ -243,6 +253,12 @@
 					"viewType": "XML",
 					"viewLevel": 2,
 					"viewId": "messenger"
+				},
+				"file": {
+					"viewName": "file.File",
+					"viewType": "XML",
+					"viewLevel": 2,
+					"viewId": "file"
 				},
 				"notFound": {
 					"viewType": "XML",

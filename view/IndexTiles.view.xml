@@ -33,6 +33,7 @@
 							<StandardTile id="BA2" icon="sap-icon://add-photo" title="{i18n>barcodeScanner}" press="onNavBarcodeScanner" />
 							<StandardTile id="BA3" icon="sap-icon://signature" title="{i18n>signaturePad}" press="onNavSignaturePad" />
 							<StandardTile id="BA4" icon="sap-icon://message-popup" title="{i18n>messenger}" press="onNavMessenger" />
+							<StandardTile id="BA5" title="File Process" press="onNavFile" />
 						</tiles>
 
 					</TileContainer>

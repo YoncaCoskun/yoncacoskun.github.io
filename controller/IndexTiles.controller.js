@@ -33,6 +33,9 @@ sap.ui.define([
 			onNavMessenger: function () {
 				oRouter.navTo("messenger");
 			},
+			onNavFile: function () {
+				oRouter.navTo("file");
+			},
 			handlePopoverPress: function (oEvent) {
 				if (!this._oPopover) {
 					this._oPopover = sap.ui.xmlfragment("ems.UI5Showcase.fragments.Calendar", this);
