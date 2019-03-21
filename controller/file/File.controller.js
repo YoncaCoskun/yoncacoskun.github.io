@@ -12,7 +12,6 @@ sap.ui.define([
 
 			},
 			handleUploadPress: function () {
-				debugger;
 				var parentNode = document.getElementById("textGrid");
 				var grid = canvasDatagrid({
 					parentNode: parentNode,
@@ -33,8 +32,14 @@ sap.ui.define([
 						}
 					]
 				});
-				var oFileUploader = this.byId("fileUploader");
-				oFileUploader.upload();
+				debugger;
+				var fU = this.getView().byId("fileUploader");
+				var domRef = fU.getFocusDomRef();
+				var file = domRef.files[0];
+				var reader = new FileReader();
+				var t = this;
+				reader.readAsBinaryString(file);
+
 			},
 			handleUploadComplete: function (oEvent) {
 				var sResponse = oEvent.getParameter("response");
