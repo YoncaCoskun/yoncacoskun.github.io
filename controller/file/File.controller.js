@@ -32,13 +32,17 @@ sap.ui.define([
 						}
 					]
 				});
-				debugger;
-				var fU = this.getView().byId("fileUploader");
-				var domRef = fU.getFocusDomRef();
+
+				var oUploader = this.getView().byId("fileUploader");
+				var domRef = oUploader.getFocusDomRef();
 				var file = domRef.files[0];
 				var reader = new FileReader();
-				var t = this;
 				reader.readAsBinaryString(file);
+				var fileContent = XLSX.read(reader.result, {
+					type: "binary"
+				});
+
+
 
 			},
 			handleUploadComplete: function (oEvent) {
